@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href ="React_4.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="#header">header</a>
+            <a href="#phoform">Phone Form</a>
+            <a href="#image">Pix</a>
+            <a href="#slideshow">Slideshow</a>
+            <a href="#msgform">contact</a>
+        </nav>
+    
+        
+        <div id="header">
+            <h1>Random Challanges - Final de Javascript</h1>
+            <h2>Welcome to some things i've coded...</h2>
+            <h3>it gets a little weird...but works!</h3>
+            <p style="font-size:3vw;">This is text using vw sizing</p>
+        </div>
+<!--POP UP FORM - CONTACT MY STICKY BUTTON-->
+        <div class="sticky">
+            <button class="button" onclick="openForm2()">Are we having fun yet? Send me a message!!!!</button>
+            <div class="form-popup2" id="msgform">
+                <form class="form-container">
+                  <h1>Comments or Questions?</h1>
+                  <h3>Send me a message!</h3>
+              
+                  <label><b>Name</b></label>
+                  <input type="text" placeholder="Enter your Full Name" name="fullname">
+
+                  <label><b>Email</b></label>
+                  <input type="text" placeholder="Enter your Email Address" name="email">
+                    <br>
+                  <label><b>Message</b></label>
+                  <input type="text" placeholder="Enter your message..." name="message">
+              
+                  <button type="submit" class="btn">Send Message</button>
+                  <button type="submit" class="btn cancel" onclick="closeForm2()">Close</button>
+                </form>
+            </div>    
+        
+        
+        
+        </div>  
+<!--PHONE CHECK FORM-->
+        <div id="phoform">
+            <div class="fade-out">
+              <h1>Phone Form</h1>
+                <form id="phone_form">
+                    Name:<br>
+                    <input type="text" name="name" value="">
+                    <br>
+                    Phone Number:<br>
+                    <input id="num" type="text" name="PhNum" value="">
+                    <br>
+                    
+                    <input type="submit" value="Submit" onclick="validateForm()">
+                </form> 
+                </div>
+            </div>
+
+    
+    
+     
+<!--ZOOM IMAGE-->
+    <div id="image">
+        <div class="img4">
+        <img src="./images/thumb4.jpg" width="400px" height="250px" alt="lolopass">
+        </div>
+    </div>
+
+<!--AUTO PLAY SLIDE SHOW-->
+        <div class="slideshow_container">
+            <div id="slideshow">
+            <div>
+                <img src="./images/thumb6.jpg" width="400px" height="250px">
+            </div>
+            <div>
+                <img src="./images/thumb7.jpg" width="400px" height="250px">
+            </div>
+            <div>
+                <img src="./images/thumb9.jpg" width="400px" height="250px">
+            </div>
+            <div>
+                Thanks for looking at my Gallery!!!<br>@FiorePhotographyPDX
+            </div>
+            </div>
+        </div>
+
+
+    
+<!--pop up form - newsletter-->
+        <button class="open-button" onclick="openForm()">Newsletter Sign up!</button>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+              <h1>Welcome, please enter your email to sign up for our newsletter!</h1>
+          
+              <label><b>Name</b></label>
+              <input type="text" placeholder="Enter your Full Name" name="fullname">
+          
+              <label><b>Email</b></label>
+              <input type="text" placeholder="Enter your Email Address..." name="email" required>
+          
+              <button type="submit" class="btn">Submit</button>
+              <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <script>
+        //body fade
+        document.body.className += ' fade-out';
+
+        $(function() {
+        $('body').removeClass('fade-out');
+        });
+       
+        //validate phone
+        function validateForm() {
+        var x = document.forms["phone_form"]["PhNum"].value;
+        if (x == "") {
+        alert("Phone Number must be filled out");
+        return false;
+          }
+        }
+        //pop up form - newsletter
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        //pop up form - message me
+        function openForm2() {
+            document.getElementById("msgform").style.display = "block";
+        }
+
+        function closeForm2() {
+            document.getElementById("msgform").style.display = "none";
+        }
+
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() { 
+        $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+        },  3000);
+        
+        </script>
+
+    </body>
+</html>

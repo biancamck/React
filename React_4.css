@@ -1,0 +1,147 @@
+
+            html {
+                background-color: black;
+                scroll-behavior:smooth;
+            }
+
+             
+
+            body {
+                opacity: 1;
+                transition: 1s opacity;
+            }
+            body.fade-out {
+                opacity: 0;
+                transition: none;
+                }
+
+           
+                /*block styles*/
+            #header {
+                height:500px;
+                width: auto;
+                background: peachpuff;
+                margin:50px auto;
+                padding: 50px;
+            }
+            
+            #phoform {
+                height:500px;
+                width: auto;
+                background: teal;
+                margin:50px auto;
+                padding: 50px;
+            }
+            
+            #image {
+                height: 500px;
+                width: auto;
+                background: palevioletred;
+                margin:50px auto;
+                padding: 50px;
+            }
+
+            /*slideshow styles */
+            .slideshow_container {
+                height: auto;
+                width: auto;
+                background: paleturquoise;
+                margin:50px auto;
+                padding: 50px;
+            }
+            #slideshow { 
+                margin: 50px auto; 
+                position: relative; 
+                width: 410px; 
+                height: 260px; 
+                padding: 10px; 
+                box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+            }
+            
+            #slideshow > div { 
+                position: absolute; 
+                top: 10px; 
+                left: 10px; 
+                right: 10px; 
+                bottom: 10px; 
+            }
+
+            /* Button used to open the contact form - fixed at the bottom of the page */
+            .open-button {
+                background-color: #555;
+                color: white;
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+                position: fixed;
+                bottom: 23px;
+                right: 28px;
+                width: 280px;
+}
+
+            /* contact message form : are we having fun yet*/
+            .form-popup2 {
+                display: none;
+                height: 200px;
+                width: auto;
+                bottom: 100px;
+                right: 15px; 
+                border: 3px solid black;
+                background-color: whitesmoke;
+                color: black;
+            }
+
+                /* The popup form - hidden by default for newsletter sign up */
+            .form-popup {
+                display: none;
+                position: fixed;
+                height: 150px;
+                width: auto;
+                bottom: 100px;
+                right: 15px;
+                border: 3px solid #f1f1f1;
+                animation: mymove 5s infinite;
+                background-color: gray;
+            }
+            @keyframes mymove {
+                from {top: 0px;}
+                to {top: 400px;} 
+            }
+
+            .img4 {
+                margin: 50px;
+            } 
+
+            @keyframes zoominoutsinglefeatured {
+                0% {
+                    transform: scale(1,1);
+                }
+                50% {
+                    transform: scale(1.2,1.2);
+                }
+                100% {
+                    transform: scale(1,1);
+                }
+            }
+            
+            .img4 img {
+                animation: zoominoutsinglefeatured 15s forwards;
+                margin: 50px;
+                
+            }
+
+            div.sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                }
+
+            .button {
+                background-color: transparent;
+                border: 4px solid white;
+                color: white;
+                text-align: center;
+                padding: 15px;
+                font-size: 20px;
+            }
